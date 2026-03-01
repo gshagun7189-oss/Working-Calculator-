@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+      background-color: grey;
+      border-radius: 10px;
+      border: none;
+    }
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-template-rows: 80px repeat(5, 60px);
+      background-color: whitesmoke;
+      border-radius: 5px;
+      box-shadow: 3px 3px 10px black;
+      padding: 20px;
+      gap: 10px;
+    }
+    .display {
+      grid-column: span 4;
+      font-size: 2em;
+      text-align: right;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      word-break: break-all;
+      cursor: text;
+      resize: none;
+      font-family: Arial, sans-serif;
+  }
+    .display::-webkit-scrollbar {
+      height: 0px;
+    }
+    .display::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .display::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    button{
+      font-size: 1.5em;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(211, 211, 211);
+      box-shadow: 2px 2px 5px black;
+      cursor: pointer; 
+      transition: 0.6s;
+      text-align: center;
+    }
+    button:hover {
+      background-color: peachpuff;
+    }
+    .equal{
+      grid-column:span 2;
+      background-color: #169c57;
+      color: white;
+      padding: 20px;
+    }
+
+  </style></head>
+<body>
+  <div class ="calculator">
+  <input type="text" class="display" id="display" value="0">
+  <button onclick="clearDisplay()">C</button>
+  <button onclick="backspace()">⌫</button>
+  <button onclick="appendValue('/')">/</button>
+  <button onclick="appendValue('*')">*</button>
+
+  <button onclick="appendValue('7')">7</button>
+  <button onclick="appendValue('8')">8</button>
+  <button onclick="appendValue('9')">9</button>
+  <button onclick="appendValue('-')">-</button>
+
+  <button onclick="appendValue('4')">4</button>
+  <button onclick="appendValue('5')">5</button>
+  <button onclick="appendValue('6')">6</button>
+  <button onclick="appendValue('+')">+</button>
+
+  <button onclick="appendValue('1')">1</button>
+  <button onclick="appendValue('2')">2</button>
+  <button onclick="appendValue('3')">3</button>
+  <button onclick="appendValue('.')">.</button>
+
+  <button onclick="appendValue('0')" class="equal">0</button>
+  <button onclick="calculate()">=</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="index.js"></script>
+</body>
+</html>
